@@ -184,7 +184,7 @@ func main() {
 	projectIDs := []int{}
 	progress := false
 
-	flag := pflag.NewFlagSet("glrc", pflag.ContinueOnError)
+	flag := pflag.NewFlagSet(path.Base(os.Args[0]), pflag.ContinueOnError)
 
 	flag.StringVar(&rc.destDir, "dest-dir", "./repos", "")
 	flag.IntSliceVar(&rc.ignoreProjectIDs, "ignore-project-ids", rc.ignoreProjectIDs, "")
