@@ -1,1 +1,1 @@
-# github-repo-cloner
+# gitlab-repo-cloner
