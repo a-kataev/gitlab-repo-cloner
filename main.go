@@ -13,7 +13,7 @@ import (
 	"github.com/go-git/go-git/v5/plumbing/transport"
 	"github.com/go-git/go-git/v5/plumbing/transport/ssh"
 	"github.com/spf13/pflag"
-	"github.com/xanzy/go-gitlab"
+	gitlab "gitlab.com/gitlab-org/api/client-go"
 )
 
 type RepoCloner struct {
@@ -196,7 +196,7 @@ func main() {
 	flag.BoolVar(&progress, "progress", progress, "")
 
 	if err := flag.Parse(os.Args[1:]); err != nil {
-		if !errors.Is(pflag.ErrHelp, err) {
+		if !errors.Is(err, pflag.ErrHelp) {
 			slog.Error("flag error", slog.String("error", err.Error()))
 		}
 

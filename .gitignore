@@ -1,3 +1,4 @@
+.DS_Store
+gitlab-repo-cloner
 /repos/*
 !/repos/.gitkeep
-gitlab-repo-cloner
